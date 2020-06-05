@@ -1,0 +1,56 @@
+#ifndef SPMSPV_COMMON_H_
+#define SPMSPV_COMMON_H_
+
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <iostream>
+#include <string.h>
+#include <math.h>
+
+#define SPMSPV_SUCCESS                   0
+#define SPMSPV_UNKOWN_FORMAT            -1
+#define SPMSPV_UNSUPPORTED_CSR_SPMV     -2
+#define SPMSPV_UNSUPPORTED_VALUE_TYPE   -3
+
+
+#define SPMSPV_UNSUPPORTED_CSR_SPMSPV   -4
+#define SPMSPV_UNSUPPORTED_COO_SPMSPV   -5
+#define FORMAT_ERR_HOLA_SPMV            -6
+
+#define SPMSPV_FORMAT_CSR  -8
+#define SPMSPV_FORMAT_CSR5 -9
+#define SPMSPV_FORMAT_COO  -10
+#define SPMSPV_FORMAT_BCSC -11
+#define SPMSPV_FORMAT_CSC  -12
+
+#define SPMSPV_MAT_FORMAT_ERR  -13
+#define SPMSPV_VEC_FORMAT_ERR  -14
+
+//csr5-spmv
+// #define ANONYMOUSLIB_SUCCESS                   0
+// #define ANONYMOUSLIB_UNKOWN_FORMAT            -1
+// #define ANONYMOUSLIB_UNSUPPORTED_CSR_SPMV     -4
+// #define ANONYMOUSLIB_UNSUPPORTED_VALUE_TYPE   -5
+// #define ANONYMOUSLIB_UNSUPPORTED_CSR_SPMSPV   -6
+// #define ANONYMOUSLIB_UNSUPPORTED_COO_SPMSPV   -7
+
+
+#define ANONYMOUSLIB_UNSUPPORTED_CSR5_OMEGA   -13
+#define ANONYMOUSLIB_CSR_TO_CSR5_FAILED       -14
+
+// #define ANONYMOUSLIB_FORMAT_CSR  0
+// #define ANONYMOUSLIB_FORMAT_CSR5 1
+// #define ANONYMOUSLIB_FORMAT_COO 3
+// #define ANONYMOUSLIB_FORMAT_BCSC 4
+// #define ANONYMOUSLIB_FORMAT_CSC 5
+
+#define ANONYMOUSLIB_FORMAT_HYB5 2
+
+#define ANONYMOUSLIB_CSR5_OMEGA   32
+#define ANONYMOUSLIB_THREAD_BUNCH 32
+#define ANONYMOUSLIB_THREAD_GROUP 128
+
+#define ANONYMOUSLIB_AUTO_TUNED_SIGMA -1
+
+#endif // SPMSPV_COMMON_H_

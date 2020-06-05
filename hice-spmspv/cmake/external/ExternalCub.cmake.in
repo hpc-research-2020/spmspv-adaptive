@@ -1,0 +1,30 @@
+cmake_minimum_required(VERSION 3.11 FATAL_ERROR)
+
+include(ExternalProject)
+
+message(STATUS "Use internal @target_name@ building")
+
+ExternalProject_Add(@target_name@
+  GIT_REPOSITORY  
+    https://github.com/NVlabs/cub.git
+  GIT_TAG         
+    d622848f9fb62f13e5e064e1deb43b6bcbb12bad
+  GIT_PROGRESS
+    TRUE
+  SOURCE_DIR
+    "@EXTERNAL_PROJECT_DIR@/@target_name@/src"
+  BINARY_DIR
+    "@EXTERNAL_PROJECT_DIR@/@target_name@/build"
+  TMP_DIR
+    "@EXTERNAL_PROJECT_DIR@/@target_name@/tmp"
+  STAMP_DIR
+    "@EXTERNAL_PROJECT_DIR@/@target_name@/stamp"
+  UPDATE_COMMAND  
+    ""
+  CONFIGURE_COMMAND 
+    ""
+  BUILD_COMMAND 
+    ""
+  INSTALL_COMMAND 
+    ""
+)

@@ -1,0 +1,38 @@
+cmake_minimum_required(VERSION 3.11 FATAL_ERROR)
+
+include(ExternalProject)
+
+message(STATUS "Use internal @target_name@ building")
+
+ExternalProject_Add(@target_name@
+  GIT_REPOSITORY  
+    https://github.com/Reference-LAPACK/lapack-release.git
+  GIT_TAG         
+    d97a30482e005c90822c12a8ea684d5200a8e314
+  GIT_PROGRESS
+    TRUE
+  SOURCE_DIR
+    "@EXTERNAL_PROJECT_DIR@/@target_name@/src"
+  BINARY_DIR
+    "@EXTERNAL_PROJECT_DIR@/@target_name@/build"
+  TMP_DIR
+    "@EXTERNAL_PROJECT_DIR@/@target_name@/tmp"
+  STAMP_DIR
+    "@EXTERNAL_PROJECT_DIR@/@target_name@/stamp"
+  UPDATE_COMMAND  
+    ""
+  INSTALL_COMMAND  
+    ""
+  TEST_COMMAND
+    ""
+  CMAKE_ARGS
+    -DCMAKE_INSTALL_PREFIX=@STAGED_INSTALL_PREFIX@
+    -DCMAKE_BUILD_TYPE=@CMAKE_BUILD_TYPE@
+    -DCMAKE_CC_COMPILER=@CMAKE_CC_COMPILER@
+    -DCMAKE_CXX_COMPILER=@CMAKE_CXX_COMPILER@
+    -DCMAKE_Fortran_COMPILER=@CMAKE_Fortran_COMPILER@
+    -DCBLAS=ON
+    -DLAPACKE=ON
+  CMAKE_CACHE_ARGS
+    -DCMAKE_CXX_FLAGS:STRING=@CMAKE_CXX_FLAGS@
+)
