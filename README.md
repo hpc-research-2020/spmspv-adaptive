@@ -23,9 +23,30 @@ Despite numerous efforts for optimizing the performance of Sparse Matrix and Vec
 
 # Run
 
-```c++
-  cd hice-spmspv/hice/la/script;
-  run *.sh
+```python
+
+  #The execution scripts are in the following path: 
+  cd hice-spmspv/hice/la/script
+
+  #Generate training data set:
+  run generate_mat_feature.sh
+  run generate_model_data.sh
+
+  #Train the models
+  cd model
+  ## generate the label
+  python 1-generate_matrix_class.py
+  ## train the decision tree model:
+  python 1-test_dtree.py
+  ## train svm/gbdt/randomforest models
+  python 1-test-svm.py
+  python 1-test-randomforest.py
+  python 1-test-gbdt.py
+
+  # run adaptive spmspv
+  sh run_bfs_predict.sh
+
+  #
 ```
 
 
